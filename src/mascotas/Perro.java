@@ -28,4 +28,9 @@ public class Perro extends Mascota {
         // El método abstracto expresarse en la superclase obliga a sobreescribir
         System.out.println(super.getNombre() + ": GUAU GUAU");
     }
+    
+    @Override
+    public void comer() {
+        System.out.println(super.getNombre() + ": GUAU, estos huesitos están muy sabrosos.");
+    }
 }

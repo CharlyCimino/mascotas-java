@@ -2,7 +2,7 @@ package mascotas;
 
 // Si una clase tiene al menos un METODO ABSTRACTO, debe ser ABSTRACTA
 // Por ser abstracta no se puede instanciar, pero sirve para generalizar y usar polimorfismo
-public abstract class Mascota {
+public abstract class Mascota implements CapazDeComer {
 
     private String nombre;
     private int edad;

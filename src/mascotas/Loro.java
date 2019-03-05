@@ -20,4 +20,9 @@ public class Loro extends Mascota {
         // El método abstracto expresarse en la superclase obliga a sobreescribir
         System.out.println(super.getNombre() + ": PRRRR PRRRR");
     }
+    
+    @Override
+    public void comer() {
+        System.out.println(super.getNombre() + ": PRRRR, ¡Este alpiste está brutal!");
+    }
 }
