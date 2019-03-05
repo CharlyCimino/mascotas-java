@@ -23,8 +23,9 @@ public class Perro extends Mascota {
         return super.toString() + " De raza " + this.raza;
     }
 
-    public void ladrar() {
-        // Obtengo su nombre (lo tiene la superclase Mascota) y lo hago ladrar
+    @Override
+    public void expresarse() {
+        // El método abstracto expresarse en la superclase obliga a sobreescribir
         System.out.println(super.getNombre() + ": GUAU GUAU");
     }
 }

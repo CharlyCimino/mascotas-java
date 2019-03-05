@@ -14,9 +14,10 @@ public class Loro extends Mascota {
         // Obtengo la representación en String de la superclase Mascota y agrego los atributos de Loro
         return super.toString() + " Con volumen " + this.volumen;
     }
-
-    public void parlotear() {
-        // Obtengo su nombre (lo tiene la superclase Mascota) y lo hago parlotear
+    
+    @Override
+    public void expresarse() {
+        // El método abstracto expresarse en la superclase obliga a sobreescribir
         System.out.println(super.getNombre() + ": PRRRR PRRRR");
     }
 }
