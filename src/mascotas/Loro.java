@@ -1,25 +1,22 @@
 package mascotas;
 
-public class Loro {
+public class Loro extends Mascota {
 
-    private String nombre;
-    private int edad;
-    private int peso;
     private int volumen;
 
     public Loro(String nombre, int edad, int peso, int volumen) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.peso = peso;
-        this.volumen = volumen;
+        super(nombre, edad, peso); // Se crea primero una mascota
+        this.volumen = volumen; // Solo los loros tienen volumen (según mi modelo)
     }
 
     @Override
     public String toString() {
-        return this.nombre + ", " + this.edad + " años, " + this.peso + " kg. Con volumen " + this.volumen;
+        // Obtengo la representación en String de la superclase Mascota y agrego los atributos de Loro
+        return super.toString() + " Con volumen " + this.volumen;
     }
 
     public void parlotear() {
-        System.out.println(this.nombre + ": PRRIIII PRRIIII");
+        // Obtengo su nombre (lo tiene la superclase Mascota) y lo hago parlotear
+        System.out.println(super.getNombre() + ": PRRRR PRRRR");
     }
 }

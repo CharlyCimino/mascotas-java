@@ -1,34 +1,30 @@
 package mascotas;
 
-public class Perro {
+// Un Perro es una Mascota
+public class Perro extends Mascota {
 
-    private String nombre;
-    private int edad;
-    private int peso;
     private String raza;
 
     public Perro(String nombre, int edad, int peso, String raza) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.peso = peso;
-        this.raza = raza;
+        super(nombre, edad, peso); // Se crea primero una mascota
+        this.raza = raza; // Solo los perros tienen raza (según mi modelo)
     }
 
     // Doy la posibilidad de crear instancias de Perro sin requerir la raza.
     // Por defecto, será "Callejero"
     public Perro(String nombre, int edad, int peso) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.peso = peso;
-        this.raza = "Callejero";
+        super(nombre, edad, peso); // Se crea primero una mascota
+        this.raza = "Callejero"; // Solo los perros tienen raza
     }
 
     @Override
     public String toString() {
-        return this.nombre + ", " + this.edad + " años, " + this.peso + " kg. De raza " + this.raza;
+        // Obtengo la representación en String de la superclase Mascota y agrego los atributos de Perro
+        return super.toString() + " De raza " + this.raza;
     }
 
     public void ladrar() {
-        System.out.println(this.nombre + ": GUAU GUAU");
+        // Obtengo su nombre (lo tiene la superclase Mascota) y lo hago ladrar
+        System.out.println(super.getNombre() + ": GUAU GUAU");
     }
 }

@@ -7,21 +7,31 @@ package mascotas;
 public class Principal {
 
     public static void main(String[] args) {
-        // Creamos un par de mascotas de prueba
-        Perro a = new Perro("Scooby Doo",2, 25, "Gran Danés");
-        Perro b = new Perro("Pluto", 4, 20);
-        Gato c = new Gato("Félix",3, 17, "Blanquinegro");
-        Gato d = new Gato("Garfield", 6, 32, "Naranja");
-        Perro e = new Perro("Ayudante de Santa", 2, 14, "Galgo");
-        Gato f = new Gato("Bola de nieve II", 4, 20, "Negro");
-        Loro g = new Loro("Alex", 2, 1, 80);
-        
-        System.out.println(a); // Equivalente a esto: System.out.println( a.toString() );
-        System.out.println(b); // Equivalente a esto: System.out.println( b.toString() );
-        System.out.println(c); // Equivalente a esto: System.out.println( c.toString() );
-        System.out.println(d); // Equivalente a esto: System.out.println( d.toString() );
-        System.out.println(e); // Equivalente a esto: System.out.println( e.toString() );
-        System.out.println(f); // Equivalente a esto: System.out.println( f.toString() );
-        System.out.println(g); // Equivalente a esto: System.out.println( g.toString() );
+        // Creo algunos objetos con distintas combinaciones
+
+        // VALIDO
+        Perro p = new Perro("Boby", 2, 3, "Pekinés");
+        System.out.println(p);
+        p.ladrar(); // Los perros pueden ladrar
+
+        System.out.println("");
+
+        // VALIDO
+        Mascota m = new Mascota ("Pepe", 4, 2); // Mascota genérica
+        System.out.println(m);
+        // Las mascotas genéricas no ladran, ni maullan, ni parlotean
+
+        System.out.println("");
+
+        // VALIDO
+        Mascota g = new Gato ("Michi", 1, 3, "Negro"); // Un Gato es una Mascota.
+        // A pesar de guardar una referencia a un Gato, se comportará como una mascota genérica.
+        System.out.println(g);
+        // g.maullar(); No se puede
+
+        System.out.println("");
+
+        // NO VALIDO
+        // Loro l = new Mascota("Luis",5,2); // No se puede. Una Mascota no es un Loro.
     }
 }
